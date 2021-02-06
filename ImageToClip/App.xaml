@@ -2,8 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ImageToClip"
-             StartupUri="MainWindow.xaml">
+             StartupUri="/Views/ClipAreaView.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>
