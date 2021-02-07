@@ -60,7 +60,7 @@ namespace ImageToClip.Models
 
         public void Capture()
         {
-            Bmp = ScreenCapture.ScreenCapture.CaptureScreen(Left, Top, Right, Bottom, scale: 1.5);
+            Bmp = ScreenCapture.CaptureScreen(Left, Top, Right, Bottom, scale: 1.5);
             FilePath = CreateTmpFile();
             Bmp.Save(FilePath);
         }
