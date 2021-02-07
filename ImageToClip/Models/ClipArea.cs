@@ -9,6 +9,8 @@ namespace ImageToClip.Models
 {
     public class ClipArea : ICloneable
     {
+        #region properties
+
         private Point P1;
         private Point P2;
 
@@ -16,15 +18,22 @@ namespace ImageToClip.Models
         public int Left => Math.Min(P1.X, P2.X);
         public int Right => Math.Max(P1.X, P2.X);
         public int Bottom => Math.Max(P1.Y, P2.Y);
-
         public int Width => Math.Abs(P1.X - P2.X);
         public int Height => Math.Abs(P1.Y - P2.Y);
+
+        #endregion properties
+
+        #region constructor
 
         public ClipArea()
         {
             P1 = new Point(0, 0);
             P2 = new Point(0, 0);
         }
+
+        #endregion constructor
+
+        #region Methods
 
         public void SetPoint1(int x, int y)
         {
@@ -49,5 +58,7 @@ namespace ImageToClip.Models
             var bmp = ScreenCapture.ScreenCapture.CaptureScreen(Left, Top, Right, Bottom, scale: 1.5);
             bmp.Save(@"E:\temp\test.png");
         }
+
+        #endregion Methods
     }
 }

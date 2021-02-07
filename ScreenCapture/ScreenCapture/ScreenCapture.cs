@@ -15,9 +15,11 @@ namespace ScreenCapture
             var h = (int)(Math.Abs(y1 - y2) * scale);
             var x = (int)(Math.Min(x1, x2) * scale);
             var y = (int)(Math.Min(y1, y2) * scale);
-            Size s = new Size();
-            s.Width = w;
-            s.Height = h;
+            Size s = new Size()
+            {
+                Width = w,
+                Height = h
+            };
 
             Bitmap BMP = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             Graphics GFX = Graphics.FromImage(BMP);
