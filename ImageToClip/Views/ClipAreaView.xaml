@@ -10,8 +10,8 @@
         Background="Transparent"
         WindowStyle="None"
         Title="ClipperView"
-        Height="{Binding Height}"
-        Width="{Binding Width}"
+        Height="2160"
+        Width="3840"
         Top="0"
         Left="0" ResizeMode="NoResize" ShowInTaskbar="False" Cursor="Hand">
     <Window.DataContext>

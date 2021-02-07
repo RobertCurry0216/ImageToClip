@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace ScreenCaptureTest
+namespace ScreenCapture
 {
     public class ScreenCapture
     {
-        public static Bitmap CaptureScreen(int x1, int y1, int x2, int y2)
+        public static Bitmap CaptureScreen(int x1, int y1, int x2, int y2, double scale = 1.0)
         {
-            var w = (int)(Math.Abs(x1 - x2) * 1.5);
-            var h = (int)(Math.Abs(y1 - y2) * 1.5);
-            var x = (int)(Math.Min(x1, x2) * 1.5);
-            var y = (int)(Math.Min(y1, y2) * 1.5);
+            var w = (int)(Math.Abs(x1 - x2) * scale);
+            var h = (int)(Math.Abs(y1 - y2) * scale);
+            var x = (int)(Math.Min(x1, x2) * scale);
+            var y = (int)(Math.Min(y1, y2) * scale);
             Size s = new Size();
             s.Width = w;
             s.Height = h;

@@ -43,5 +43,11 @@ namespace ImageToClip.Models
             c.P2 = P2;
             return c;
         }
+
+        public void Capture()
+        {
+            var bmp = ScreenCapture.ScreenCapture.CaptureScreen(Left, Top, Right, Bottom, scale: 1.5);
+            bmp.Save(@"E:\temp\test.png");
+        }
     }
 }
