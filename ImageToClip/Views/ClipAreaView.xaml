@@ -9,10 +9,25 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        Title="ClipperView" Height="450" Width="800">
+        Title="ClipperView"
+        Height="{Binding Height}"
+        Width="{Binding Width}"
+        Top="0"
+        Left="0" ResizeMode="NoResize" ShowInTaskbar="False" Cursor="Hand">
     <Window.DataContext>
         <vm:ClipAreaViewModel />
     </Window.DataContext>
-    <Canvas x:Name="ClipArea" Background="Transparent">
+    <Canvas x:Name="ClipArea"
+            Background="Transparent"
+            MouseMove="ClipArea_MouseMove"
+            MouseLeftButtonDown="ClipArea_MouseLeftButtonDown"
+            MouseLeftButtonUp="ClipArea_MouseLeftButtonUp">
+        <Rectangle Canvas.Top="0" Canvas.Left="0" Width="{Binding ClipArea.Left}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
+        <Rectangle Canvas.Top="0" Canvas.Left="{Binding ClipArea.Right}" Width="{Binding Width}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
+
+        <Rectangle Canvas.Top="0" Canvas.Left="0" Width="{Binding Width}" Height="{Binding ClipArea.Top}" Fill="Black" Opacity="0.3" />
+        <Rectangle Canvas.Top="{Binding ClipArea.Bottom}" Canvas.Left="0" Width="{Binding Width}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
+
+        <Rectangle Canvas.Top="{Binding Path=ClipArea.Top}" Canvas.Left="{Binding Path=ClipArea.Left}" Width="{Binding ClipArea.Width}" Height="{Binding ClipArea.Height}" Stroke="Red" StrokeThickness="2" />
     </Canvas>
 </Window>

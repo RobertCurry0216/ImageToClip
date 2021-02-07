@@ -13,8 +13,4 @@
   <ItemGroup>
     <ProjectReference Include="..\ScreenCapture\ScreenCapture\ScreenCapture.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
 </Project>
