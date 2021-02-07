@@ -25,9 +25,10 @@
         <Rectangle Canvas.Top="0" Canvas.Left="0" Width="{Binding ClipArea.Left}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
         <Rectangle Canvas.Top="0" Canvas.Left="{Binding ClipArea.Right}" Width="{Binding Width}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
 
-        <Rectangle Canvas.Top="0" Canvas.Left="0" Width="{Binding Width}" Height="{Binding ClipArea.Top}" Fill="Black" Opacity="0.3" />
-        <Rectangle Canvas.Top="{Binding ClipArea.Bottom}" Canvas.Left="0" Width="{Binding Width}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
+        <Rectangle Canvas.Top="0" Canvas.Left="{Binding ClipArea.Left}" Width="{Binding ClipArea.Width}" Height="{Binding ClipArea.Top}" Fill="Black" Opacity="0.3" />
+        <Rectangle Canvas.Top="{Binding ClipArea.Bottom}" Canvas.Left="{Binding ClipArea.Left}" Width="{Binding ClipArea.Width}" Height="{Binding Height}" Fill="Black" Opacity="0.3" />
 
+        <Rectangle Canvas.Top="{Binding Path=ClipArea.Top}" Canvas.Left="{Binding Path=ClipArea.Left}" Width="{Binding ClipArea.Width}" Height="{Binding ClipArea.Height}" Fill="White" Opacity="0.1" />
         <Rectangle Canvas.Top="{Binding Path=ClipArea.Top}" Canvas.Left="{Binding Path=ClipArea.Left}" Width="{Binding ClipArea.Width}" Height="{Binding ClipArea.Height}" Stroke="Red" StrokeThickness="2" />
     </Canvas>
 </Window>
