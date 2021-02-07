@@ -112,7 +112,10 @@ namespace ImageToClip.ViewModels
 
         internal void MouseUp(object sender, MouseButtonEventArgs e)
         {
-            ClipArea.Capture();
+            using (var reader = new ImageTextReader(ClipArea))
+            {
+                reader.ClipText();
+            }
             System.Windows.Application.Current.Shutdown();
         }
 
