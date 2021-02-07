@@ -18,27 +18,27 @@ namespace ImageToClip.Views
     /// <summary>
     /// Interaction logic for ClipAreaView.xaml
     /// </summary>
-    public partial class ClipAreaView : Window
+    public partial class ClippingView : Window
     {
-        public ClipAreaView()
+        public ClippingView()
         {
             InitializeComponent();
         }
 
         private void ClipArea_MouseMove(object sender, MouseEventArgs e)
         {
-            ((ClipAreaViewModel)DataContext).MouseMove(sender, e);
+            ((IClippingViewModel)DataContext).MouseMove(sender, e);
         }
 
         private void ClipArea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((ClipAreaViewModel)DataContext).MouseDown(sender, e);
+            ((IClippingViewModel)DataContext).MouseDown(sender, e);
         }
 
         private void ClipArea_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Close();
-            ((ClipAreaViewModel)DataContext).MouseUp(sender, e);
+            ((IClippingViewModel)DataContext).MouseUp(sender, e);
         }
     }
 }

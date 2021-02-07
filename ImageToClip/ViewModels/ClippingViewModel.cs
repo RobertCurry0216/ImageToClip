@@ -16,7 +16,7 @@ using System.Windows.Threading;
 
 namespace ImageToClip.ViewModels
 {
-    public class ClipAreaViewModel : INotifyPropertyChanged
+    public class ClippingViewModel : INotifyPropertyChanged, IClippingViewModel
     {
         #region INotifyPropertyChanged
 
@@ -81,7 +81,7 @@ namespace ImageToClip.ViewModels
 
         #region Constructor
 
-        public ClipAreaViewModel()
+        public ClippingViewModel()
         {
             Height = 2160;
             Width = 3840;
@@ -102,7 +102,7 @@ namespace ImageToClip.ViewModels
             }
         }
 
-        internal void MouseDown(object sender, MouseButtonEventArgs e)
+        public void MouseDown(object sender, MouseButtonEventArgs e)
         {
             var mouse = e.GetPosition(sender as Canvas);
             var c = new ClipArea();
@@ -110,7 +110,7 @@ namespace ImageToClip.ViewModels
             ClipArea = c;
         }
 
-        internal void MouseUp(object sender, MouseButtonEventArgs e)
+        public void MouseUp(object sender, MouseButtonEventArgs e)
         {
             using (var reader = new ImageTextReader(ClipArea))
             {
