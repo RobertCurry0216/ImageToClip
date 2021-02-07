@@ -63,7 +63,6 @@ namespace ImageToClip.Models
             ClipArea.Capture();
             var text = ReadText();
             Clipboard.SetText(text);
-            Console.WriteLine(text);
         }
 
         protected override void DisposeObject()
